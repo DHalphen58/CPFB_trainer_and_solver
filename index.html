@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Optimal CPFB solver for the 3x3 cube: 1x2x3 block around a fixed reference corner plus corners solvable in 2-gen.">
+<title>CPFB Optimal Solver</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%A9%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head><body><main>
+<h1>CPFB Optimal Solver</h1>
+<textarea id="sc" rows="2" placeholder="Enter scramble, e.g. R U R' F2 D L' B2 ..."></textarea>
+<div style="margin:10px 0 0">
+<label>Hand <select id="hand"><option value="L">Left</option><option value="R">Right</option></select></label>
+<label>UD color <select id="ud"><option value="1">White / Yellow</option><option value="2">Green / Blue</option><option value="0">Red / Orange</option></select></label>
+<label><input type="checkbox" id="minf"> Fewest F/Fw</label><label><input type="checkbox" id="nom"> No M</label><label><input type="checkbox" id="nocp"> Disable CP</label><label><input type="checkbox" id="lineopt"> Optimal CP line</label>
+<div style="margin:6px 0 0;color:var(--mut)">Move cost</div><div style="margin:6px 0 0;white-space:nowrap"><label style="margin:0 8px 0 4px">S <input type="number" id="cs1" value="1" min="0.25" step="0.25" style="width:58px"></label><label style="margin:0 8px 0 4px">S2 <input type="number" id="cs2" value="1" min="0.25" step="0.25" style="width:58px"></label><label style="margin:0 8px 0 4px">S' <input type="number" id="cs3" value="1" min="0.25" step="0.25" style="width:58px"></label></div><div style="margin:6px 0 0;white-space:nowrap"><label style="margin:0 8px 0 4px">Uw <input type="number" id="cu1" value="1" min="0.25" step="0.25" style="width:58px"></label><label style="margin:0 8px 0 4px">Uw2 <input type="number" id="cu2" value="1" min="0.25" step="0.25" style="width:58px"></label><label style="margin:0 8px 0 4px">Uw' <input type="number" id="cu3" value="1" min="0.25" step="0.25" style="width:58px"></label></div><div style="margin:6px 0 0;white-space:nowrap"><label style="margin:0 8px 0 4px">M <input type="number" id="cm1" value="1" min="0.25" step="0.25" style="width:58px"></label><label style="margin:0 8px 0 4px">M2 <input type="number" id="cm2" value="1" min="0.25" step="0.25" style="width:58px"></label><label style="margin:0 8px 0 4px">M' <input type="number" id="cm3" value="1" min="0.25" step="0.25" style="width:58px"></label></div>
+</div>
+<button class="p" id="go">Solve</button> <button id="rnd">Generate Scramble</button>
+<div id="st"></div>
+<div class="wrap"><table id="tb" hidden><thead><tr><th>Top / Front</th><th>Ref. corner</th><th>Len</th><th>Solution</th></tr></thead><tbody></tbody></table></div>
+<script src="engine.js"></script>
+<script src="app.js"></script>
+</main></body></html>
